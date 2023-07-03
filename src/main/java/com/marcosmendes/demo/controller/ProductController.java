@@ -1,6 +1,6 @@
-package controller;
+package com.marcosmendes.demo.controller;
 
-import entities.Departament;
+import com.marcosmendes.demo.entities.Departament;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/products")
 public class ProductController {
     @GetMapping
-    public static Departament getProducts() {
-        Departament techDepartament = new Departament();
-        techDepartament.setId(1L);
-        techDepartament.setName("TechDepartament");
-
-        return techDepartament;
+    public Departament getProducts() {
+        return new Departament(1L, "Tech Departament");
     }
 }
